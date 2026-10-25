@@ -1,1 +1,15 @@
-../../dotfiles/hyprland/.config/hypr/hyprland.lua
+-- Entry point: requires only, no settings here.
+-- Order matters: shared modules (theme, programs) first.
+require("modules.theme")
+require("modules.programs")
+require("modules.env")
+require("modules.monitors")
+require("modules.permissions")
+require("modules.appearance")
+require("modules.animations")
+require("modules.layouts")
+require("modules.misc")
+require("modules.input")
+require("modules.binds")
+require("modules.rules")
+require("modules.autostart")
