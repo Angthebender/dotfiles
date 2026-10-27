@@ -1,0 +1,97 @@
+{
+    "layer": "top",
+    "position": "top",
+    // Thin MacBook-ish island
+    "height": 38,
+    "width": 520,
+    "margin-top": 7,
+    "margin-left": 420,
+    "margin-right": 420,
+    "spacing": 0,
+    "modules-left": [
+        "clock",
+        "cpu",
+        "memory"
+    ],
+    "modules-center": [
+        "custom/cava"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "battery"
+    ],
+    // ─────────────────────────────
+    // CLOCK
+    // ─────────────────────────────
+    "clock": {
+        "format": "{:%b %d  %H:%M}",
+        "tooltip-format": "{:%A, %B %d}",
+    },
+    // ─────────────────────────────
+    // CPU
+    // ─────────────────────────────
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+        "tooltip": false,
+    },
+    // ─────────────────────────────
+    // RAM
+    // ─────────────────────────────
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 2,
+        "tooltip": false,
+    },
+    // ─────────────────────────────
+    // AUDIO VISUALIZER
+    // ─────────────────────────────
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "return-type": "json",
+        "format": "{}",
+    },
+    // ─────────────────────────────
+    // WIFI
+    // ─────────────────────────────
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": " ",
+        "tooltip-format-wifi": "{essid}\n{signalStrength}%",
+        "on-click": "kitty -e nmtui",
+    },
+    // ─────────────────────────────
+    // BLUETOOTH
+    // ─────────────────────────────
+    "bluetooth": {
+        "format": "󰂯 ",
+        "format-disabled": "󰂲 ",
+        "format-connected": "󰂱 ",
+        "on-click": "kitty -e bluetui",
+    },
+    // ─────────────────────────────
+    // BATTERY
+    // ─────────────────────────────
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "states": {
+            "warning": 25,
+            "critical": 12,
+        },
+    },
+}

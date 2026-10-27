@@ -1,0 +1,91 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+
+  min-height: 0;
+}
+
+/* Entire Waybar window is transparent */
+window#waybar {
+  background: transparent;
+}
+
+/* The actual floating island */
+window#waybar>box {
+  background: rgba(18, 18, 20, 0.9);
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 0 5px;
+}
+
+/* Common module styling */
+#clock {
+  color: rgba(255, 255, 255, 0.92);
+
+  padding: 6px;
+
+  margin: 0;
+  font-weight: bold;
+}
+
+#cpu,
+#memory,
+#network,
+#bluetooth,
+#battery {
+  color: rgba(255, 255, 255, 0.92);
+
+  padding: 6px;
+
+  margin: 0;
+}
+
+/* Slight separation */
+#cpu,
+#network {
+  margin-left: 5px;
+}
+
+/* ───────────────────────
+   CAVA
+   ─────────────────────── */
+
+#custom-cava {
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 2px 18px;
+  margin: 4px 0;
+  font-size: 14px;
+  letter-spacing: -4px;
+}
+
+/* Network disconnected */
+
+#network.disconnected {
+  opacity: 0.3;
+}
+
+/* Bluetooth disabled */
+
+#bluetooth.disabled {
+  opacity: 0.3;
+}
+
+/* Battery warnings */
+
+#battery.warning {
+  color: #ffd166;
+}
+
+#battery.critical {
+  color: #ff5555;
+}
+
+/* Charging */
+
+#battery.charging {
+  color: #a6e3a1;
+}
